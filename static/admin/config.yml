@@ -20,7 +20,7 @@ collections:
     create: true
     fields:
       - { label: 'Titel', name: 'title', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Webseitenausgabe', name: 'description', widget: 'markdown' }
   - name: 'Klangreisen' # Used in routes, e.g., /admin/collections/blog
     label: 'Klangreisen' # Used in the UI
     folder: '/src/displaySeiten/klangreisen'
