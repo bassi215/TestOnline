@@ -1,13 +1,37 @@
 <template>
-  <main>
-    <section class="self-center flex flex-col flex-1 items-center justify-center">
-      <h1 class="title text-center">Nuxt — Tailwind — Netlify CMS</h1>
-      <h2 class="subtitle text-center">Boilerplate</h2>
-    </section>
-
-    <section class="mt-8">
-      <h3 class="text-primary-600 dark:text-primary-400 max-w-5xl mx-auto">Latest blog post</h3>
-      <posts post-type="blog" :amount="1" />
-    </section>
+  <main style="padding: 1rem; text-align: center">
+    <div>
+      <div style="margin-top: 5rem">
+        <p style="text-align: center; font-size: 30pt">
+          <span>Herzlich Willkommen!</span>
+        </p>
+        <!-- <p style="text-align: center;  font-size:30pt; "><span >Willkommen!</span></p> -->
+        <img src="assets/img/logo.jpeg" alt="Error" class="rounded-circle" style="width: 350px; margin-bottom: 2rem" />
+      </div>
+    </div>
+    <div class="container col-md-5 margin padding rounded shadow-lg modal-style" style="font-size: 15pt">
+      <h1 class="pb-2 border-bottom">Anstehende Termine</h1>
+      <div>
+        <posts post-type="termine" :amount="10" />
+      </div>
+      <p>
+        19:00 Uhr - 20:00 Uhr <br />Klangreise in der Praxis Lebensfit
+        (Hohenzollernstr. 119; 56068 Koblenz)
+      </p>
+    </div>
   </main>
 </template>
+
+<script>
+export default {
+  async asyncData({ $content, error }) {
+    let posts;
+    try {
+      posts = await $content("termine").fetch();
+    } catch (e) {
+      error({ message: "Keine anstehenden Termine" });
+    }
+    return { posts };
+  },
+}
+</script>
