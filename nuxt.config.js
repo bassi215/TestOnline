@@ -15,7 +15,7 @@ export default {
       process.env.NODE_ENV === 'production'
         ? process.env.URL || 'http://createADotEnvFileAndSetURL'
         : 'http://localhost:3000',
-    lang: SITE_INFO.sitelang || 'en-US',
+    lang: SITE_INFO.sitelang || 'de-DE',
   },
   /*
    ** Headers of the page
@@ -37,24 +37,7 @@ export default {
         href: 'https://fonts.gstatic.com',
         crossorigin: true,
       },
-      {
-        rel: 'preload',
-        as: 'style',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap',
-        media: 'print',
-        onload: `this.media='all'`,
-      },
     ], // ? Imports the font 'Inter', can be optimized by the netlify plugin 'Subfont' by uncommenting it in `netlify.toml`
-    noscript: [
-      {
-        innerHTML:
-          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">',
-      },
-    ],
     __dangerouslyDisableSanitizers: ['noscript'],
   },
   /*

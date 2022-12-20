@@ -1,15 +1,99 @@
-@import './_vars.pcss';
-@import './_transitions.pcss';
-@import './_globals.pcss';
+.modal-style {
+  color: black;
+  background-color: #ffffffec;
+}
 
-/* @layer base START */
-@import './_typography.pcss';
-@import './_forms.pcss';
-@import './_grid.pcss';
-@import './_cards.pcss';
-/* @layer base END */
+.popup-style {
+  color: black;
+  background-color: white;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* If you need to let Tailwind classes overwrite your own classes, they need to be beneath this */
+body {
+  background-color: #000000ec;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+}
+
+a::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+a::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: #44a6b4 !important;
+  z-index: -1;
+  transition: transform 0.3s ease;
+  border-radius: 0.375rem !important;
+}
+
+.selected {
+  display: block;
+  background: #44a6b4 !important;
+  z-index: -1;
+  transition: transform 0.3s ease;
+  border-radius: 0.375rem !important;
+}
+
+a {
+  position: relative;
+}
+
+.btn-klang {
+  background: #44a6b4;
+  color: black;
+}
+
+.btn-klang:hover {
+  color: black;
+  background-color: #78bacc;
+  border-color: #78bacc;
+}
+
+.btn-shop {
+  transition: 0.3s;
+}
+
+.btn-shop:hover {
+  background-color: #44a6b4;
+}
+
+.img-hover:hover {
+  background-color: rgba(0, 0, 0, 0.192);
+}
+
+@media all and (min-width: 1030px) and (max-width: 2000px) {
+  .modal-style {
+    position: relative;
+    animation-name: opacity;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -9,7 +9,7 @@
           style="width: 350px; margin-bottom: 2rem" />
       </div>
     </div>
-    <div class="container col-md-5 margin padding rounded shadow-lg modal-style" style="font-size: 15pt">
+    <div class="container col-md-() margin padding rounded shadow-lg modal-style" style="font-size: 15pt">
       <h1 class="pb-2 border-bottom">Anstehende Termine</h1>
       <posts post-type="termine" />
       <p>
@@ -17,12 +17,34 @@
         (Hohenzollernstr. 119; 56068 Koblenz)
       </p>
     </div>
-    <div class="btn btn-primary">
-      Test
-    </div>
   </main>
 
 </template>
+
+<style>
+body {
+  background-image: url("../assets/img/HomeBack2.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.margin {
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+.modal-home {
+  color: black;
+  background-color: #ffffffe0;
+  padding: 0rem;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+</style>
 
 <script>
 export default {

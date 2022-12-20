@@ -1,6 +1,6 @@
 <template>
   <ul v-if="posts.length > 0" class="cards">
-    <li v-for="(post, index) in posts" :key="index">
+    <p v-for="(post, index) in posts" :key="index">
       <template v-if="postType === 'termine'">
         <span class="flex-1">
           <p class="mt-2">{{ post.description }}</p>
@@ -13,7 +13,7 @@
           <p class="mt-2">{{ post.description }}</p>
         </span>
       </template>
-    </li>
+    </p>
   </ul>
   <div v-else-if="loading" class="cards">
     <div v-for="placeholder in placeholderClasses" :key="placeholder.id" class="card">
